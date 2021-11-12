@@ -1,0 +1,11 @@
+name: Run test on push on main or PR
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+
+jobs:
+  call-test:
+    uses: galatolofederico/weirdcipher/.github/workflows/test.yaml@main

@@ -1,5 +1,5 @@
-name: Test on push
-on: push
+name: Reusable test
+on: workflow_call
 
 jobs:
   run-tests:

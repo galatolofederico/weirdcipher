@@ -65,8 +65,9 @@ class WeirdCipher:
         message = np.array(bytearray(message))
         
         for p, k in zip(round_p, round_k):
-            message = message[p]
             message = np.bitwise_xor(message, k)
+            message = message[p]
+            
         
         message = bytes(message.tolist())
         message = base64.b64encode(message)
@@ -91,8 +92,9 @@ class WeirdCipher:
 
         ciphertext = np.array(bytearray(ciphertext))
         for p, k in zip(round_p[::-1], round_k[::-1]):
-            ciphertext = np.bitwise_xor(ciphertext, k)
             ciphertext = ciphertext[invert_permutation(p)]
+            ciphertext = np.bitwise_xor(ciphertext, k)
+
         
         ciphertext = bytes(ciphertext.tolist())
         

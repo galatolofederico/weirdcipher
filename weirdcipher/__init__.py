@@ -1,0 +1,1 @@
+from weirdcipher.cipher import WeirdCipher

@@ -11,6 +11,8 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: 3.7
+      - name: Install our package
+        run: python setup.py install
       - name: Install pytest
         run: pip install pytest
       - name: Run the tests
